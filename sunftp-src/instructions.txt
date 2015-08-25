@@ -1,0 +1,225 @@
+SunFTP Server Project, instruction booklet v0.0.1
+
+written by NGin, xs4all network
+for Build: 9(1) and bejoynd
+
+Language: UK English or whatever it's called
+
+
+Warning:
+the instructions in this file are basic, some functions
+may have been let out or the information is not "up'to date".
+
+
+
+
+
+--==[ Introduction ]==--
+
+Welcome to SunFTP Server Project,
+
+Now you may wonder, why the hell another FTP Server?
+Well, first of all, it's not just another FTP Server, infact
+it's the first of its kind. A brand new project based on Object Pascal
+or in other words "Delphi Code".
+
+SSP was first intended as a "School Project". But since I (NGin)
+personally never written a fully working FTP Server before, I decided
+to share my work with other people and from this stage SSP have been
+released as Open Source, anyone can join the project or infact
+use the code on their own.
+
+SSP is not using Assembler/C/C++ or other developement tools, no it's
+a pure art of work in Object Pascal for Win32, which makes it even
+easier to join. Code should be compatible with all versions of
+Delphi, but unfortunateley there have been reports on Delphi 3 Std,
+Delphi 4 Desktop and Delphi 5 doesn't compile the code correct, but
+so let it be.
+
+SSP Offers:
+
+ - Easy user management (thanks to Jan Tomasek)
+ - Dirfferent permissions for each user (R/W/D/L)
+ - Hide real real PATH from users (thanks to Jan Tomasek)
+ - Powerful authorization procedure (thanks to Jan Tomasek)
+ - IP based security (thanks to Rasmus Allenheim)
+ - Welcome/Goodbye messages (thanks to Jan Tomasek)
+ - Enough options for most people
+ - Open Source (available under "lesser" GPL)
+ - Slick User Interface (SUI)
+ - and much more...
+
+If this isn't enough for you, go and look elsewere!
+
+--==[ How can I compile source ]==--
+
+First of all, get yourself a copy of Delphi 3 (Pro or C/S).
+Download the components RX Libs from http://rx.demo.ru and install
+them, secondly download the components ICS from http://rtfm.be/fpiette
+and install them to. Those components are freeware, so get them.
+
+Now you should have a look in the SunFTP Src dir "\Units" there is
+a Delphi package ready to install in Delphi 3 (SunFTP.dpl).
+Now open the project and press <CTRL>+<F9>, watch the screen for
+errors, no one should occur, maybe just some warnings, thats it!
+
+Now run the file "SunFTP.exe" and have fun, if you don't want to
+do this, browse to the URL: http://xs4all.dk/sunftp/download.shtml
+and download the compiled binary. Doohh.
+
+--==[ About this booklet and other install tips ]==--
+
+First of all, I'm NGin, it was me who started the SunFTP Server Project
+in back in July 1999. I have written this document espescially for
+you, sorry for my bad english, please don't correct me.
+I don't like personally to write help files nor files like this one,
+so maybe this document doesn't fit your needs, and I couldn't care less.
+
+There may be some other SSP documents out there in CyberSpace written
+by someone else other than me, but I don't know of any, this documents
+why.
+
+--==[ First time run ]==--
+
+If you just installed SSP, then click and run the file "SunFTP.exe".
+You should now see a Message Dialog saying "Since the.. bla..bla.."
+or something like it, now you should see the properties dialog
+or configuration screen. Set the options as you want them:
+
+Server ->
+ Port:        This is default set to be 21. 21 is used by almost any
+              ftp clients today, so leave this in default mode.
+ Max Clients: This indicates the maximum of allowed clients to
+              be connected to SSP. Default value is set to 10, this
+              is enough in most cases. If you enter 0, then the
+              number of max clients are infinite. You can have the
+              maximum of 999 clients connected to SSP.
+ Server msg:  This is the FTP Banner message, goes like:
+              220 My FTP Server ready on port 21...
+ Restrict IP: This is the message to be shown when a not allowed
+              client tries to connect to the FTP Server.
+
+System ->
+
+ Autostart:   This will autostart the FTP Server when it is started.
+ Minimize:    Minimize SSP to the system tray when it is minimized
+              or launched.
+ AutSt.Every: This enables the SSP to be a part of your system, it
+              will be launched automatically every Windows session.
+
+Logging ->
+
+ Max lines:   This is the maximum lines to be displayed in the Logfile
+              message box, default value is set to 1000 lines, you
+              can increase and decrease the value, no max values
+              are there.
+ Enable:      This enables SSP to save the Logfile message box contents
+              to a chosen file. Default name is: ftp.log, change it
+              to your own personallt favourite ;)
+
+IP Restriction ->
+
+ Rest.IP's:   This is a list of IP addresses, all the added are being
+              let out and the Restrict IP Msg. is showed. Click
+              Add, Delete or Clear, button captions explains their
+              respective functions.
+
+Messages ->
+
+ Welcome msg: This message is being showed when a client connects
+              to the FTP Server, it goes like:
+
+              220-Welcome to xs4all ftp services, all actions on this
+              220-ftp server are being logged, now you're warned!
+              220
+ Goodbye msg: This message is being showed when a client disconnects
+              from the FTP Server, just like the welcome message.
+
+Now click "OK" and the FTP Server is ready to be operated, but first we
+have to add some users.
+
+Click the "User Manager" button and a new screen should appear.
+
+Now click the "Add" button and the user name "Anonymous" should apear
+among with the options:
+
+ Password: ********* (randomized)
+ Home directory: SSPDir\users\user_anonymous\
+ Permissions: None
+
+Now you can change the password to your own, e.g.: anon
+Remember to change the permissions, avail permissions are: R,W,D,L
+I would suggest: R,W for anonymous logins
+
+To create a new user, simply click the button "Add" again
+To change the home directory, click the button with the folder on it.
+Now you can choose directory for the user, to create a new one simply
+select dir and right click your mouse button. Thats it.
+
+When you're finished, click on the button "Close" and start the
+FTP Server.
+
+--==[ Administer SSP ]==--
+
+To be the administrator of a SSP server isn't hard at all. SSP is cosidered
+to be one of the most simple FTP Servers available on the market today
+which is still free to use.
+
+When you have started the SSP, you will get the information:
+
+(In the Logfile message box)
+1999.08.25 19:02:38 -- FTP Server started (21, 10.10.10.2)
+1999.08.25 19:02:38 -- Logging actions to file D:\SunFTP\logs\ftp.log
+
+It may not be like as shown above, but something like it.
+
+Explanation of the logged options:
+
+1999.08.25 19:02:38, is the time of an event
+-- FTP Server started (21, 10.10.10.2), is the action taken
+
+In this case we have the information "(21, 10.10.10.2)", which means:
+21 is the Port number the FTP Server is running on and the 10.10.10.2
+is the IP Address. You can easily get the IP by clicking <ALT>+<I>
+The IP address is shown in the logbox as well as it is copied to the
+clipboard (paste into any other Win app via <CTRL>+<V>).
+
+To clear the logbox, simply click <ALT>+<R>.
+To shutdown the FTP Server immediately, simply click <ALT>+<CTRL>+<T>
+
+Well I guess that's all. To view the saved logfile goto: SSPDir\logs\
+and list the file named "ftp.log".
+
+--==[ FAQ - Frequently Asked Questions ]==--
+
+Q. Can I please have the source, pretty pretty please?
+A. It's Open Source, what do you think punk?
+
+Q. Can I run SSP as a System Service with NT?
+A. Yepp, with help from the tool SrvAny, let me know if it
+   works for you!
+
+Q. Will there ever be a .HLP file available for SSP?
+A. I don't think so, isn't this file enough?
+
+Q. How compatible are SSP with other FTP Servers?
+A. Just as compatible as any other :)
+
+Q. Does SSP support RESUME?
+A. Yepp
+
+Q. Can I distribute SSP on my own homepage, cd etc.?
+A. Read the file "license.txt" for further info, yes you may!
+
+Q. Is it true that you doesn't offer any support?
+A. Me? Yes that's true, it's Open Source, no support from me!
+
+Q. How can I contact the SSP Group?
+A. via the e-mail address: sunftp@xs4all.dk
+
+Q. Hmm...
+A. Yes?
+
+--==[ Some words from the author ]==--
+
+Ok let me say this straight out: SSP makes me happy!
