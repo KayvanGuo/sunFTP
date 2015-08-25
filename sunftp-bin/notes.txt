@@ -1,0 +1,5 @@
+There is a well documented flaw in this version where malformed socket connections
+can lock up or cause issues for the main daemon.
+
+The issue has been documented in more detail on various exploit listing / fault testing
+websites.
